@@ -4,7 +4,7 @@
 `sudo apt install apaache2`
 `sudo systemctl apache2`
 ![Apache status](./images/apache-status.png)
-`![curl command](./image/curl-command.png)
+![curl command](./image/curl-command.png)
 `curl.png`
 `checking php -v.png`
 `confirming sudo mysl -p.png`
