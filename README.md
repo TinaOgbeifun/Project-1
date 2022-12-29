@@ -95,8 +95,7 @@ Run the sudo systemctl reload apache2 to restart the apache2 web server for the 
 
 Create an index.php file in our webserver block and add the following code using the vim editor
 
-<?php
-phpinfo();
+
 
 ![creating an index php file](./Images/creating-an-index-php-file.png)
 
