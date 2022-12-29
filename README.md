@@ -63,7 +63,56 @@ sudo apt install php php-mysql libapache2-mod-php
  ![checking php v](./Images/checking-php-v.png)
 # Creating Web Domain For Our Site
 
-Apache webserver serves a website by the way of server blocks inside its /var/www/ directory, and it can support multiple of this server blocks to host other websites.
+The projectlampstack directory represents the directory which will contains files related to our website as it represents a new server block on the apache webserver. In order to spin up this server block we need to configure it by creating a .conf file.
+
+sudo vi /etc/apache2/sites-available/projectlampstack.conf
+
+The below represents the configuration needed to spin up the server block.
+
+![apache2 available site](./Images/apache2-available-sites.png)
+
+Run esc :wq  to save and terminate vi editor.
+
+Run sudo a2ensite projectlampstack to activate the server block.
+
+Run sudo a2dissite 000-default to deactivate the default webserver block that comes with apache on default.
+
+Reload the apache2 server sudo systemctl reload apache2
+
+![apache2ctl configtest](./Images/sudo-apache2ctl-configtest.png)
+
+![systemctl status apache2](./Images/sudo-systemctl-apache2-status.png)
+
+# Enable php on the wesite
+
+This is useful for setting up maintenance pages in PHP applications, by creating a temporary index.html file containing an informative message to visitors, To serve an index.php containing the server-side code, you’ll need to edit the /etc/apache2/mods-enabled/dir.conf file and change the order in which the index.php file is listed within the DirectoryIndex. I will now run
+
+sudo vim /etc/apache2/mods-enabled/dir.conf
+
+![apache2 mods enabled directory](./Images/apache2-mods-enabled-dir-conf.png)
+
+Run the sudo systemctl reload apache2 to restart the apache2 web server for the changes made to the DirectoryIndex to take effect.
+
+Create an index.php file in our webserver block and add the following code using the vim editor
+
+<?php
+phpinfo();
+
+![creating an index php file](./Images/creating-an-index-php-file.png)
+
+Input the instance public ip address on a web browser
+
+![inputting public ip address on a web browser](./Images/inputting-public-ip-address-on-a-web-browser.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
