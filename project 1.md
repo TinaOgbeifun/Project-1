@@ -1,4 +1,4 @@
-## my documentation of project
+## my documentation of project 1
 
 ![sudo apt update](./Images/sudo-apt-update.png)
 
